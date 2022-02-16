@@ -6,8 +6,8 @@ function createGrid(gridSize) {
         for (let j = 0; j < gridSize; j++ ) {
             let pixel = document.createElement("div");
             pixel.classList.add("pixel");
-            pixel.addEventListener("mouseenter", function(event) {
-                event.target.style.backgroundColor = "black";
+            pixel.addEventListener("mouseenter", event => {
+                pixel.classList.add("colored");
             });
             grid.appendChild(pixel);
         }
@@ -21,4 +21,8 @@ function createGrid(gridSize) {
 
 let gridSize = window.prompt("Input pixel grid size:");
 createGrid(gridSize);
-let draw = true;
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener('click', event => {
+    let pixels = document.querySelectorAll(".pixel");
+    pixels.forEach(pixel => pixel.classList.remove("colored"));
+});
