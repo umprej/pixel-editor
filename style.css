@@ -4,10 +4,12 @@ html * {
 
 .canvas {
     display: grid;
-    
+    max-height: fit-content;
+    max-width: 90vmin;
+    max-height: 90vmin;
 }
 
 .pixel {
     background-color: darkorange;
-    padding:10px;
+    aspect-ratio: 1;
 }
