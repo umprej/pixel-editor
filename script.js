@@ -36,7 +36,7 @@ function createClearButton() {
     clearButton.addEventListener('click', event => clearPixels());
 }
 
-function createResizeButton() {
+function createResizeButton(currGridSize) {
     let resizeButton = document.getElementById("resize");
     resizeButton.addEventListener('click', event => {
         clearPixels();
@@ -69,7 +69,7 @@ function createResizeButton() {
     });
 }
 
-var currGridSize = 8;
+let currGridSize = 8;
 createGrid(currGridSize);
 createClearButton();
-createResizeButton();
+createResizeButton(currGridSize);
