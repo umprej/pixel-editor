@@ -13,3 +13,7 @@ html * {
     background-color: darkorange;
     aspect-ratio: 1;
 }
+
+.colored {
+    background-color:darkorchid;
+}
