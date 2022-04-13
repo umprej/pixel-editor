@@ -11,17 +11,21 @@
 <body>
     <h1>pixel draw</h1>
     <div class="settings">
-        <button id="clear">clear</button>
-        <button id="resize">resize</button>
-        <div class="color-picker">
-            <input type="color" id="brush-color"
-                   value="#000000">
-            <label for="brush-color">brush</label>
+        <div class="buttons">
+            <button id="clear">clear</button>
+            <button id="resize">resize</button>
         </div>
-        <div class="color-picker">
-            <input type="color" id="canvas-color"
-                   value="#ffffff">
-            <label for="canvas-color">canvas</label>
+        <div class="pickers">
+            <div class="color-picker">
+                <input type="color" id="brush-color"
+                       value="#000000">
+                <label for="brush-color">brush</label>
+            </div>
+            <div class="color-picker">
+                <input type="color" id="canvas-color"
+                       value="#ffffff">
+                <label for="canvas-color">canvas</label>
+            </div>
         </div>
     </div>
     <div class="canvas"></div>
