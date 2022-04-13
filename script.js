@@ -2,7 +2,10 @@ function createPixel() {
     let grid = document.querySelector(".canvas");
     let pixel = document.createElement("div");
     let brush = document.getElementById("brush-color");
+    let canvasPicker = document.getElementById("canvas-color");
+
     pixel.classList.add("pixel");
+    pixel.style.backgroundColor = canvasPicker.value;
     pixel.addEventListener("mouseenter", event => {
         pixel.classList.add("colored");
         pixel.style.backgroundColor = brush.value;
@@ -94,4 +97,4 @@ let currGridSize = 8;
 createGrid(currGridSize);
 createClearButton();
 createResizeButton(currGridSize);
-createResizeButton(currGridSize);
+addColorPickerListener();
