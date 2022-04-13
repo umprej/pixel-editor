@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    background-color: lightgray;
 }
 
 .canvas {
@@ -22,13 +23,14 @@ body {
 }
 
 .pixel {
-    background-color: darkorange;
+    background-color: rgb(255, 255, 255);
     border: 1px solid rgba(0,0,0,0.1);
     aspect-ratio: 1;
 }
 
 .colored {
-    background-color:darkorchid;
+    /* background-color:darkorchid; */
+
 }
 
 .settings {
@@ -48,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: darkorange;
+    background-color: rgb(160, 160, 160);
     cursor: pointer;
 }
 

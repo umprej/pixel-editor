@@ -1,9 +1,11 @@
 function createPixel() {
     let grid = document.querySelector(".canvas");
     let pixel = document.createElement("div");
+    let brush = document.getElementById("brush-color");
     pixel.classList.add("pixel");
     pixel.addEventListener("mouseenter", event => {
         pixel.classList.add("colored");
+        pixel.style.backgroundColor = brush.value;
     });
     grid.appendChild(pixel);
 }
@@ -28,7 +30,12 @@ function createGrid(gridSize) {
 
 function clearPixels() {
     let pixels = document.querySelectorAll(".pixel");
-    pixels.forEach(pixel => pixel.classList.remove("colored"));
+    let canvasPicker = document.getElementById("canvas-color");
+
+    pixels.forEach(pixel => {
+        pixel.classList.remove("colored")
+        pixel.style.backgroundColor = canvasPicker.value;
+    });
 }
 
 function createClearButton() {
@@ -69,7 +76,19 @@ function createResizeButton(currGridSize) {
     });
 }
 
+
+function addColorPickerListener() {
+    let canvasPicker = document.getElementById("canvas-color");
+    
+    canvasPicker.addEventListener("change", (event) => {
+        let pixels = document.querySelectorAll(".pixel:not(.colored)");
+        pixels.forEach(pixel => pixel.style.backgroundColor = canvasPicker.value);
+        
+    });
+}
+
 let currGridSize = 8;
 createGrid(currGridSize);
 createClearButton();
+createResizeButton(currGridSize);
 createResizeButton(currGridSize);
