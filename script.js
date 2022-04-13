@@ -46,16 +46,19 @@ function createClearButton() {
 function createResizeButton(currGridSize) {
     let resizeButton = document.getElementById("resize");
     resizeButton.addEventListener('click', event => {
-        clearPixels();
         let gridSize = currGridSize;
         while(true) {
             gridSize = window.prompt("Input pixel grid size:");
+            if (gridSize === null) {
+                return;
+            }
             if (gridSize < 100) {
                 break;
             }
             window.alert("Please input a number smaller than 100");
         }
 
+        clearPixels();
         const pixels = document.getElementsByClassName("pixel");
         let pixelCount = Math.pow(gridSize, 2);
         let currPixelCount = Math.pow(currGridSize, 2);
